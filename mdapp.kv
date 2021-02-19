@@ -1,0 +1,202 @@
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+    
+ScreenManagement:
+    transition: FadeTransition()
+    HomeScreen:
+    EuroScreen:
+    FcfaScreen:
+    FcfaxoaScreen:
+    FcfaentierScreen:
+    
+<HomeScreen>:
+    name: "home"
+    
+    GridLayout:
+        cols: 1
+        rows: 6
+        spacing: 10
+        
+        Label:
+            text: "Appuyer sur un bouton pour faire votre conversion"
+            font_size: 14
+            color: 1, 1, 0, 1
+            
+        Button:
+            text: "Euro"
+            font_size: 20
+            background_color: 1, 0, 0, 2
+            on_release: app.root.current = "euro"
+            
+        Button:
+            text: "Fcfa"
+            font_size: 20
+            background_color: 1, 2, 1, 1
+            on_release: app.root.current = "fcfa"
+            
+        Button:
+            text: "Fcfa xoa to Fcfa entier"
+            font_size: 20
+            background_color: 1, 1, 0, 1
+            on_release: app.root.current = "xoa"
+            
+        Button:
+            text: "Fcfa entier to euro"
+            font_size: 20
+            background_color: 0, 1, 0
+            on_release: app.root.current = "entier"
+            
+        Label:
+            text: "MDPower @2021 | all right reserved"
+            
+    
+<EuroScreen>:
+    name: "euro"
+    
+    GridLayout:
+        cols: 1
+        rows: 6
+        
+        Label:
+            text: "Saisir Euro (€)\neuro ==> fcfa"
+        
+        TextInput:
+            id: entry
+            text: '1'
+            font_size: 58
+            multiline: False
+        
+        Label:
+            id: lbl
+            font_size: 55
+            color: 1, 1, 0, 1
+            text: "650 Fcfa"
+            
+        Button:
+            on_press: root.get_f()
+            text: "Converture"
+            font_size: 50
+            background_color: 0, 1, 0, .5
+            
+        Label:
+        Button:
+            on_release: app.root.current = "home"
+            text: "Retour"
+            size_hint: None, None
+            size: 150, 50
+            spacing: 15
+            font_size: 32
+            background_color: 1, 0, 0
+        
+<FcfaScreen>:
+    name: "fcfa"
+    
+    GridLayout:
+        cols: 1
+        rows: 6
+        
+        Label:
+            text: "Saisir Fcfa\nfcfa ==> euro"
+        
+        TextInput:
+            id: fcfa
+            text: '0'
+            font_size: 58
+            multiline: False
+        
+        Label:
+            id: fcfalbl
+            font_size: 55
+            color: 1, 1, 0, 1
+            text: "0 Euro"
+            
+        Button:
+            on_press: root.get_e()
+            text: "Converture"
+            font_size: 50
+            background_color: 0, 1, 0, .5
+            
+        Label:
+        Button:
+            on_release: app.root.current = "home"
+            text: "Retour"
+            size_hint: None, None
+            size: 150, 50
+            spacing: 15
+            font_size: 32
+            background_color: 1, 0, 0
+            
+<FcfaxoaScreen>:
+    name: "xoa"
+    
+    GridLayout:
+        cols: 1
+        rows: 6
+        
+        Label:
+            text: "Saisir Fcfa\nfcfa xoa ==> entier"
+        
+        TextInput:
+            id: xoainput
+            text: '5'
+            font_size: 58
+            multiline: False
+        
+        Label:
+            id: xoalbl
+            font_size: 55
+            color: 1, 1, 0, 1
+            text: "1 Entier"
+            
+        Button:
+            on_press: root.get_xoa()
+            text: "Converture"
+            font_size: 50
+            background_color: 0, 1, 0, .5
+            
+        Label:
+        Button:
+            on_release: app.root.current = "home"
+            text: "Retour"
+            size_hint: None, None
+            size: 150, 50
+            spacing: 15
+            font_size: 32
+            background_color: 1, 0, 0
+            
+<FcfaentierScreen>:
+    name: "entier"
+    
+    GridLayout:
+        cols: 1
+        rows: 6
+        
+        Label:
+            text: "Saisir entier\nfcfa entier ==> euro"
+        
+        TextInput:
+            id: entierinput
+            text: '0'
+            font_size: 58
+            multiline: False
+        
+        Label:
+            id: entierlbl
+            font_size: 55
+            color: 1, 1, 0, 1
+            text: "0 Euro"
+            
+        Button:
+            on_press: root.get_entier()
+            text: "Converture"
+            font_size: 50
+            background_color: 0, 1, 0, .5
+            
+        Label:
+        Button:
+            on_release: app.root.current = "home"
+            text: "Retour"
+            size_hint: None, None
+            size: 150, 50
+            spacing: 15
+            font_size: 32
+            background_color: 1, 0, 0
