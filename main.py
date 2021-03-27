@@ -1,4 +1,5 @@
 from kivy.app import App
+from kivy.core.window import Window 
 from kivy.uix.button import Button
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.boxlayout import BoxLayout
@@ -9,6 +10,7 @@ from kivy.lang import Builder
 from kivy.uix.widget import Widget
 # from kivy.properties import ObjectProperty
 # import sqlite3
+
                   
 class ScreenManagement(ScreenManager):
     pass
@@ -67,6 +69,7 @@ kv = Builder.load_file('mdapp.kv')
     
 class MDApp(App):
     def build(self):
+        Window.clearcolor = (0,0,0,0)
         layout = kv
         return layout
     

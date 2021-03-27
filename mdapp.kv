@@ -12,41 +12,56 @@ ScreenManagement:
     name: "home"
     
     GridLayout:
+        padding: 100
         cols: 1
-        rows: 6
-        spacing: 10
+        rows: 7
+        spacing: 20
         
         Label:
             text: "Appuyer sur un bouton pour faire votre conversion"
-            font_size: 14
             color: 1, 1, 0, 1
             
-        Button:
+        RoundedButton:
             text: "Euro"
-            font_size: 20
-            background_color: 1, 0, 0, 2
+            font_size: 30
+            back_color: (48/255,84/255,150/255,1)
             on_release: app.root.current = "euro"
             
-        Button:
+            
+        RoundedButton:
             text: "Fcfa"
-            font_size: 20
-            background_color: 1, 2, 1, 1
+            font_size: 30
+            back_color: (48/255,84/255,150/255,1)
             on_release: app.root.current = "fcfa"
             
-        Button:
-            text: "Fcfa xoa to Fcfa entier"
-            font_size: 20
-            background_color: 1, 1, 0, 1
+        RoundedButton:
+            text: "Fcfa Fcfa"
+            font_size: 30
+            back_color: (48/255,84/255,150/255,1)
+            color: 1,0,0,1
             on_release: app.root.current = "xoa"
             
-        Button:
-            text: "Fcfa entier to euro"
-            font_size: 20
-            background_color: 0, 1, 0
+        RoundedButton:
+            text: "Fcfa Euro"
+            font_size: 30
+            back_color: (48/255,84/255,150/255,1)
+            color: 1,0,0,1
             on_release: app.root.current = "entier"
-            
+         
+        Label:   
         Label:
             text: "MDPower @2021 | all right reserved"
+            
+<RoundedButton@Button>:
+    background_color: 0,0,0,0
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgba: (48/255,84/255,150/255,1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [58]
             
     
 <EuroScreen>:
@@ -54,28 +69,33 @@ ScreenManagement:
     
     GridLayout:
         cols: 1
-        rows: 6
-        
+        rows: 13
+    
+        Label:
         Label:
             text: "Saisir Euro (€)\neuro ==> fcfa"
         
         TextInput:
             id: entry
             text: '1'
-            font_size: 58
+            font_size: 30
             multiline: False
-        
+            size: 150, 50
+
+            
+        Label:
         Label:
             id: lbl
             font_size: 55
             color: 1, 1, 0, 1
             text: "650 Fcfa"
-            
-        Button:
+        
+        Label: 
+        RoundedButton:
             on_press: root.get_f()
             text: "Converture"
-            font_size: 50
-            background_color: 0, 1, 0, .5
+            font_size: 30
+            back_color: (48/255,84/255,150/255,1)
             
         Label:
         Button:
@@ -86,35 +106,43 @@ ScreenManagement:
             spacing: 15
             font_size: 32
             background_color: 1, 0, 0
+        Label:
+        Label:
+        Label:
+        Label:
         
 <FcfaScreen>:
     name: "fcfa"
     
     GridLayout:
         cols: 1
-        rows: 6
+        rows: 13
         
         Label:
-            text: "Saisir Fcfa\nfcfa ==> euro"
+        Label:
+            text: "Saisir Fcfa standard\nfcfa ==> euro"
         
         TextInput:
             id: fcfa
             text: '0'
-            font_size: 58
+            font_size: 30
             multiline: False
-        
+            
+        Label:
         Label:
             id: fcfalbl
             font_size: 55
             color: 1, 1, 0, 1
             text: "0 Euro"
-            
-        Button:
+        
+        Label:   
+        RoundedButton:
             on_press: root.get_e()
             text: "Converture"
-            font_size: 50
-            background_color: 0, 1, 0, .5
-            
+            font_size: 30
+            back_color: (48/255,84/255,150/255,1)
+        
+   
         Label:
         Button:
             on_release: app.root.current = "home"
@@ -124,34 +152,41 @@ ScreenManagement:
             spacing: 15
             font_size: 32
             background_color: 1, 0, 0
+        Label:
+        Label:
+        Label:
+        Label:
             
 <FcfaxoaScreen>:
     name: "xoa"
     
     GridLayout:
         cols: 1
-        rows: 6
+        rows: 13
         
         Label:
-            text: "Saisir Fcfa\nfcfa xoa ==> entier"
+        Label:
+            text: "Saisir Fcfa standard\nfcfa xoa ==> entier"
         
         TextInput:
             id: xoainput
             text: '5'
-            font_size: 58
+            font_size: 30
             multiline: False
         
+        Label:
         Label:
             id: xoalbl
             font_size: 55
             color: 1, 1, 0, 1
             text: "1 Entier"
-            
-        Button:
+        
+        Label:   
+        RoundedButton:
             on_press: root.get_xoa()
             text: "Converture"
-            font_size: 50
-            background_color: 0, 1, 0, .5
+            font_size: 30
+            back_color: (48/255,84/255,150/255,1)
             
         Label:
         Button:
@@ -162,34 +197,41 @@ ScreenManagement:
             spacing: 15
             font_size: 32
             background_color: 1, 0, 0
+        Label:
+        Label:
+        Label:
+        Label:
             
 <FcfaentierScreen>:
     name: "entier"
     
     GridLayout:
         cols: 1
-        rows: 6
+        rows: 13
         
+        Label:
         Label:
             text: "Saisir entier\nfcfa entier ==> euro"
         
         TextInput:
             id: entierinput
             text: '0'
-            font_size: 58
+            font_size: 30
             multiline: False
         
+        Label:
         Label:
             id: entierlbl
             font_size: 55
             color: 1, 1, 0, 1
             text: "0 Euro"
-            
-        Button:
+        
+        Label:   
+        RoundedButton:
             on_press: root.get_entier()
             text: "Converture"
-            font_size: 50
-            background_color: 0, 1, 0, .5
+            font_size: 30
+            back_color: (48/255,84/255,150/255,1)
             
         Label:
         Button:
@@ -200,3 +242,7 @@ ScreenManagement:
             spacing: 15
             font_size: 32
             background_color: 1, 0, 0
+        Label:
+        Label:
+        Label:
+        Label:
