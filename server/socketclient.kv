@@ -1,0 +1,54 @@
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+    
+ScreenManagement:
+    transition: FadeTransition()
+    SocketClient:
+    #ValidSocket:
+
+<SocketClient>:
+    name: "socket"
+    
+    GridLayout:
+        padding: 100
+        cols: 1
+        rows: 6
+        
+        Label:
+            text: "Cliquer le buton pour Tester"
+            color: 1, 0, 0, 1
+            
+            
+        RoundedButton:
+            on_press: root.connexion()
+            text: "Tester"
+            font_size: 25
+            back_color: (48/255,84/255,150/255,1)
+            #on_release: app.root.current = "valid"
+            
+        Label:
+        Label:
+        
+        Label:
+            id: demar
+            text: ""
+            color: 0, 0, 1, 1
+        
+        Label:
+            id: conn
+            text: ""
+            color: 0, 0, 1, 1
+
+
+            
+<RoundedButton@Button>:
+    background_color: 0,0,0,0
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgba: (48/255,84/255,150/255,1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [58]
+            
+            

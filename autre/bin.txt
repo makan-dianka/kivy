@@ -4,3 +4,27 @@ vert       :  0, 1, 0
 vert foncé :  0, 1, 0, .5
 rouge      :  1, 0, 0
 jaune      :  1, 1, 0, 1
+----------------------------------------
+<ApplicationMakan>
+    GridLayout:
+        cols: 1
+        rows: 1
+        spacing: 10
+        size: root.width -500, root.height -480
+        pos: 300,300
+        
+        Label:
+            id: lbl
+            text: 'nom'
+            
+        TextInput:
+            id: entry
+            
+        GridLayout:
+            cols: 2
+            size: root.width -500, root.height -480
+            pos: 100,100
+            
+            Button:
+                text: 'envoyer Mali'
+                on_press: root.bonjour()

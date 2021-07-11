@@ -69,7 +69,7 @@ ScreenManagement:
     
     GridLayout:
         cols: 1
-        rows: 13
+        rows: 16
     
         Label:
         Label:
@@ -78,9 +78,8 @@ ScreenManagement:
         TextInput:
             id: entry
             text: '1'
-            font_size: 30
+            font_size: 25
             multiline: False
-            size: 150, 50
 
             
         Label:
@@ -98,7 +97,7 @@ ScreenManagement:
             back_color: (48/255,84/255,150/255,1)
             
         Label:
-        Button:
+        RoundedButton:
             on_release: app.root.current = "home"
             text: "Retour"
             size_hint: None, None
@@ -110,13 +109,16 @@ ScreenManagement:
         Label:
         Label:
         Label:
+        Label:
+        Label:
+        Label:
         
 <FcfaScreen>:
     name: "fcfa"
     
     GridLayout:
         cols: 1
-        rows: 13
+        rows: 16
         
         Label:
         Label:
@@ -125,7 +127,7 @@ ScreenManagement:
         TextInput:
             id: fcfa
             text: '0'
-            font_size: 30
+            font_size: 25
             multiline: False
             
         Label:
@@ -144,7 +146,7 @@ ScreenManagement:
         
    
         Label:
-        Button:
+        RoundedButton:
             on_release: app.root.current = "home"
             text: "Retour"
             size_hint: None, None
@@ -156,13 +158,16 @@ ScreenManagement:
         Label:
         Label:
         Label:
+        Label:
+        Label:
+        Label:
             
 <FcfaxoaScreen>:
     name: "xoa"
     
     GridLayout:
         cols: 1
-        rows: 13
+        rows: 16
         
         Label:
         Label:
@@ -171,7 +176,7 @@ ScreenManagement:
         TextInput:
             id: xoainput
             text: '5'
-            font_size: 30
+            font_size: 25
             multiline: False
         
         Label:
@@ -189,7 +194,7 @@ ScreenManagement:
             back_color: (48/255,84/255,150/255,1)
             
         Label:
-        Button:
+        RoundedButton:
             on_release: app.root.current = "home"
             text: "Retour"
             size_hint: None, None
@@ -201,13 +206,16 @@ ScreenManagement:
         Label:
         Label:
         Label:
+        Label:
+        Label:
+        Label:
             
 <FcfaentierScreen>:
     name: "entier"
     
     GridLayout:
         cols: 1
-        rows: 13
+        rows: 16
         
         Label:
         Label:
@@ -216,7 +224,7 @@ ScreenManagement:
         TextInput:
             id: entierinput
             text: '0'
-            font_size: 30
+            font_size: 25
             multiline: False
         
         Label:
@@ -234,7 +242,7 @@ ScreenManagement:
             back_color: (48/255,84/255,150/255,1)
             
         Label:
-        Button:
+        RoundedButton:
             on_release: app.root.current = "home"
             text: "Retour"
             size_hint: None, None
@@ -242,6 +250,9 @@ ScreenManagement:
             spacing: 15
             font_size: 32
             background_color: 1, 0, 0
+        Label:
+        Label:
+        Label:
         Label:
         Label:
         Label:

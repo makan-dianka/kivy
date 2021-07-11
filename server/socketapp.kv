@@ -1,0 +1,104 @@
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+    
+ScreenManagement:
+    transition: FadeTransition()
+    Socket:
+    ValidSocket:
+    NextScreen:
+
+<Socket>:
+    name: "socket"
+    
+    GridLayout:
+        padding: 100
+        cols: 1
+        rows: 6
+        
+        Label:
+            text: "Cliquer le buton pour demarrer le server"
+            color: 1, 0, 0, 1
+            
+            
+        RoundedButton:
+            on_press: root.connexion()
+            text: "Demarrer"
+            font_size: 25
+            back_color: (48/255,84/255,150/255,1)
+            on_release: app.root.current = "valid"
+            
+        Label:
+        Label:
+        
+        Label:
+            id: demar
+          text: ""
+            color: 0, 0, 1, 1
+        
+        Label:
+            id: conn_txt
+            text: ""
+            color: 0, 0, 1, 1
+
+
+            
+<RoundedButton@Button>:
+    background_color: 0,0,0,0
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgba: (48/255,84/255,150/255,1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [58]
+            
+            
+<ValidSocket>:
+    name: "valid"
+    
+    GridLayout:
+        cols: 1
+        rows: 5
+        
+        Label:
+            id: demar
+            text: root.client()
+            color: 0, 0, 1, 1
+            
+        RoundedButton:
+            text: "Continuer"
+            font_size: 25
+            back_color: (48/255,84/255,150/255,1)
+            on_release: app.root.current = "next"
+        
+        Label:
+            id: pack
+            text: ""
+            color: 0, 0, 1, 1
+        
+        Label:
+        Label:
+
+<NextScreen>:
+    name: "next"
+    
+    GridLayout:
+        cols: 1
+        rows: 5
+        
+        Label:
+            id: etabli
+            text: "" #root.accepter()
+            color: 0, 0, 1, 1
+            
+        
+        Label:
+            id: pack
+            text: ""
+            color: 0, 0, 1, 1
+        
+        Label:
+        Label:
+            
+
+        

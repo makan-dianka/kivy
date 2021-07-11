@@ -1,0 +1,38 @@
+<ApplicationMakan>
+    GridLayout:
+        cols: 2
+        size: root.width, root.height
+        padding: 100
+        spacing: 10
+        
+            
+        MDTextField:
+            id: euro
+            input_filter: "int"
+            hint_text: "saisissez euro ici"
+            
+        MDFillRoundFlatButton:
+            text: "Converture. OK" 
+            pos_hint: {"center_x": .5}
+            on_press: root.bonjour()
+            
+        GridLayout:
+            MDLabel:
+                id: lbl
+                pos: 100,380
+                text: "Fcfa"
+                font_size: 25
+                halign: "center"
+                color: (1,0,0,1)
+                
+        GridLayout:
+            MDLabel:
+                id: retour
+                pos: 350,350
+                text: "Retour"
+                font_size: 25
+                halign: "center"
+                    
+            
+        
+

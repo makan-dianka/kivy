@@ -10,7 +10,6 @@ from kivy.lang import Builder
 from kivy.uix.widget import Widget
 # from kivy.properties import ObjectProperty
 # import sqlite3
-
                   
 class ScreenManagement(ScreenManager):
     pass

@@ -1,48 +1,33 @@
-from kivy.app import App
-from kivy.uix.label import Label
-from kivy.uix.layout import Layout 
-from kivy.uix.button import Button
+from kivymd.app import MDApp
+from kivy.lang import Builder
+from kivy.core.window import Window
+from kivy.uix.widget import Widget
 from kivy.uix.gridlayout import GridLayout
-from kivy.uix.textinput import TextInput
+from kivymd.uix.filemanager import MDFileManager
+#import os
 
-class MyGrid(GridLayout):
-    def __init__(self, **kwargs):
-        super(MyGrid, self).__init__(**kwargs)
-        self.cols = 1
-        
-        self.inside = GridLayout()
-        self.inside.cols = 2
-        
-        self.inside.add_widget(Label(text="Votre nom : "))
-        self.name = TextInput(multiline=False)
-        self.inside.add_widget(self.name)
-        
-        self.inside.add_widget(Label(text="Votre prènom : "))
-        self.prenom = TextInput(multiline=False)
-        self.inside.add_widget(self.prenom)
-        
-        self.inside.add_widget(Label(text="Votre E-mail : "))
-        self.email = TextInput(multiline=False)
-        self.inside.add_widget(self.email)
-        
-        self.add_widget(self.inside)
-        
-        self.submit = Button(text="Se soumettre", font_size=32)
-        self.submit.bind(on_press=self.pressed)
-        self.add_widget(self.submit)
-        
-    def pressed(self, instance):
-        name = self.name.text
-        prenom = self.prenom.text
-        email = self.email.text
-        print("\nNom : ",name, "\nPrènom : ",prenom, "\nEmail : ",email)
-        
-        self.name.text = ""
-        self.prenom.text = ""
-        self.email.text = ""
+Builder.load_file('kivy_f.kv')
 
-class Dagakane(App):
+
+class ApplicationMakan(Widget):
+    def bonjour(self):
+        id_euro = self.ids.euro.text
+        id_lbl = self.ids.lbl
+        
+        try:
+            conv = int(id_euro) * 130
+        except:
+            id_lbl.text = 'Error'
+        else:
+            id_lbl.text = str(conv)+' Fcfa'
+        
+    
+
+class TestAppApp(MDApp):
     def build(self):
-        return MyGrid()
+        Window.clearcolor = (0,0,0,0)
+        layout = ApplicationMakan()
+        return layout
 
-Dagakane().run()
+Insta = TestAppApp()
+Insta.run()
